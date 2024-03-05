@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 개발 목표
 
-## Getting Started
+- 과거에 만들어봤던 카톡과 비슷한 방식의 그룹채팅, 채팅방을 react, nextjs로 다시 만들어 보는것
+- 과거에 안해본 반응형 웹(현재 생각에는 모바일/랩탑/데스크탑) 만들어보기
+- 빠르게 개발하기 위해 MUI 사용 및 유저 데이터는 random API 사용
 
-First, run the development server:
+## 개발 일지
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+2024-03-05
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+프로젝트 생성, MUI 적용 및 메인 화면 반응형으로 구성
+현재 컴포넌트가 너무 이곳저곳에 만들어져 있어 한번 정리를 하긴 해야함
+채팅을 구성하는 컴포넌트를 대강 틀을 구성해뒀고 그룹방 컴포넌트, 채팅방 컴포넌트 및 현재 유저를 확인하는 메커니즘 필요
++ 현재 생각에 nextjs가 내장하는 데이터 비교기능을 이용해서 유사 웹소켓을 구현해보고 싶음
+현재 api로 불러오는걸 force cache할때 새로고침 누르면 대량의 에러와 함께 사이트가 뻗기 때문에 이 부분도 수정 필요
+필요에 따라서는 자체 API를 구성해서 사용해야 할 수도 있음
+```
