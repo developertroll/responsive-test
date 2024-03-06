@@ -1,12 +1,6 @@
-"use client";
-
 import "./globals.css";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import Dashboard from "@/dashboard/Dashboard";
+
 import MobileLayout from "./mobileLayout";
-import { useBreakPoints } from "./breakpoint";
-import Moverlay from "./mOverlay";
-import DesktopDrawer from "./DesktopDrawer";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -15,19 +9,5 @@ import DesktopDrawer from "./DesktopDrawer";
 
 // breakpoint에 따라 return을 다르게 함
 export default function RootLayout({ children }) {
-  const { isMobile, isTablet, isDesktop } = useBreakPoints();
-
-  if (isMobile) {
-    return <MobileLayout props={children} />;
-  } else {
-    return (
-      <html>
-        <body>
-          <AppRouterCacheProvider>
-            <Dashboard props={children} />
-          </AppRouterCacheProvider>
-        </body>
-      </html>
-    );
-  }
+  return <MobileLayout props={children} />;
 }

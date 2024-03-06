@@ -1,5 +1,5 @@
 import { ChatUser } from "@/exampleData/chatUser";
-import { Avatar, Button, Stack, Typography } from "@mui/material";
+import { Avatar, Stack, Typography } from "@mui/material";
 import { Suspense } from "react";
 
 export default function Page({ params: { num } }) {

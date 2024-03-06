@@ -16,7 +16,7 @@ export default function Appbar({ props: toggleDrawer }) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          News
+          Reactivity chat
         </Typography>
       </Toolbar>
     </AppBar>
