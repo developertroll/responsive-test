@@ -1,8 +1,12 @@
-export default function GroupChatCard({ title, lastContent, number }) {
+import { Card } from "@mui/material";
+import GroupchatHeader from "./GroupchatHeader";
+import GroupchatLastMessage from "./GroupchatLastMessage";
+
+export default function GroupChatCard({ title, lastContent, amount }) {
   return (
     <Card>
-      <CardHeader title={title}></CardHeader>
-      <CardContent>{lastContent}</CardContent>
+      <GroupchatHeader title={title} amount={amount} />
+      <GroupchatLastMessage lastContent={lastContent} />
     </Card>
   );
 }
