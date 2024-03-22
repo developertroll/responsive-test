@@ -23,23 +23,8 @@ export default async function create({ handleChange }) {
     });
     return response.ok ? response.json() : Promise.reject(response);
   };
-
-  const handleSubmit = (title, member) => {
-    fetchSubmit(title, member);
-  };
   return (
     <Container>
-      <Card>
-        <FormGroup>
-          {user.map((user) => (
-            <FormControlLabel
-              key={user._id}
-              control={<Checkbox onChange={handleChange} />}
-              label={<UserList user={user} />}
-            />
-          ))}
-        </FormGroup>
-      </Card>
       <Form users={user} />
     </Container>
   );

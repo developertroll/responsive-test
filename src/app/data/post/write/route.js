@@ -17,14 +17,12 @@ export async function POST(request) {
   );
 
   const data = JSON.parse(body);
-  console.log(data.title);
 
   const client = await MongoClient.connect(process.env.db_url);
   const db = client.db("resChat");
   const collection = db.collection("chatRoom");
   const result = await collection.insertOne(data);
   client.close();
-  console.log(result);
   return new Response(JSON.stringify(result), {
     status: 200,
     headers: { "Content-Type": "application/json" },

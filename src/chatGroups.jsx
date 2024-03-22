@@ -1,18 +1,26 @@
-import { Container, Grid } from "@mui/material";
-import AvatarGroup from "./AvatarGroups";
+import { Container, Card } from "@mui/material";
 import GroupChatCard from "./GroupChatCard";
+import { use } from "react";
+
+async function getAvatars(member) {
+  const avatars = await Promise.all(
+    member.map(async (member) => {
+      const response = await fetch(`${process.env.site_url}/data/${member}`);
+      const data = await response.json();
+      return data[0].avatar;
+    })
+  );
+  return avatars;
+}
 
 export default function ChatGroups({ props }) {
+  const avatars = use(getAvatars(props.member));
   return (
-    <Container>
-      <Grid container direction="row">
-        <Grid item xs={12}>
-          <AvatarGroup avatars={props.avatars} screenType={props.screenType} />
-        </Grid>
-        <Grid item xs={12}>
-          <GroupChatCard title={props.title} lastContent={props.lastContent} />
-        </Grid>
-      </Grid>
-    </Container>
+    <GroupChatCard
+      title={props.title}
+      lastContent={props.lastContent}
+      amount={props.member.length}
+      avatars={avatars}
+    />
   );
 }

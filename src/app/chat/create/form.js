@@ -1,7 +1,14 @@
 "use client";
 
 import UserSelection from "@/components/form/userSelection";
-import { TextField, Paper, Box, FormControl, Button } from "@mui/material";
+import {
+  TextField,
+  Paper,
+  Box,
+  FormControl,
+  Button,
+  Stack,
+} from "@mui/material";
 import { useState, useContext } from "react";
 import { ToastContext } from "@/app/toast";
 import { useRouter } from "next/navigation";
@@ -50,9 +57,9 @@ export default function Form({ users }) {
 
   return (
     <Box component="form">
-      <Paper>
+      <Stack>
         <FormControl>
-          <TextField onChange={handleTitle} />
+          <TextField onChange={handleTitle} label="그룹방 제목" />
           {title}
         </FormControl>
         <FormControl>
@@ -64,7 +71,7 @@ export default function Form({ users }) {
           {member}
         </FormControl>
         <Button onClick={handleSubmit}>Create</Button>
-      </Paper>
+      </Stack>
     </Box>
   );
 }
